@@ -27,6 +27,33 @@ namespace LinkedList {
 		}
 
 		public void InsertAfter(int index, object Data) {
+			int count = 0;
+			Node currentNode = head;
+
+			while (count < index){
+				if (currentNode == null) {
+					InsertBeginning(Data);
+					return;
+				}
+
+				if (currentNode.Next != null) {
+					currentNode = currentNode.Next;
+				} else {
+					break;
+				}
+
+				count++;
+			}
+
+			Node newNode = new Node();
+			newNode.Content = Data;
+
+			if (currentNode.Next != null) {
+				newNode.Next = currentNode.Next;
+			}
+
+			currentNode.Next = newNode;
+			length++;
 		}
 
 		public Node RemoveBeginning() {
@@ -42,7 +69,24 @@ namespace LinkedList {
 		}
 
 		public Node RemoveAfter(int index) {
-			return new Node();
+			int count = 0;
+			Node currentNode = head;
+			while (count < index) {
+				if (currentNode == null || currentNode.Next == null) {
+					return null;
+				}
+
+				currentNode = currentNode.Next;
+
+				count++;
+			}
+
+			Node returnNode = currentNode.Next;
+			if (returnNode != null) {
+				currentNode.Next = currentNode.Next.Next;
+			}
+			length--;
+			return returnNode;
 		}
 
 		public int Length() {

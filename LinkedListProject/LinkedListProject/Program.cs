@@ -2,12 +2,16 @@
 
 namespace LinkedList {
 	class Program {
-		static void Main(string[] args) {
-			LinkedList list = new LinkedList();
-			list.InsertBeginning(5);
-			list.RemoveBeginning();
+		static void Main() {
+			Stack newStack = new Stack();
+			newStack.Push("A");
+			newStack.Push("B");
+			newStack.Push("C");
 
-			Console.WriteLine(list.Length());
+			Console.WriteLine(newStack.Peek(1));
+			Console.WriteLine(newStack.Length());
+			Console.WriteLine(newStack.Pop());
+			Console.WriteLine(newStack.Length());
 			Console.ReadLine();
 		}
 	}

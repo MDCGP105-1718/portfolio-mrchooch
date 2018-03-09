@@ -8,7 +8,7 @@ namespace LinkedList {
 			public Node Next;
 		}
 
-		private Node head = null;
+		public Node head = null;
 		private int length;
 
 		//Adds new node at start of list

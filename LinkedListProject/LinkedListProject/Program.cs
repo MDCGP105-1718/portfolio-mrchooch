@@ -12,6 +12,8 @@ namespace LinkedList {
 			Console.WriteLine(newStack.Length());
 			Console.WriteLine(newStack.Pop());
 			Console.WriteLine(newStack.Length());
+			Console.WriteLine(newStack.Pop());
+			Console.WriteLine(newStack.Pop());
 			Console.ReadLine();
 		}
 	}

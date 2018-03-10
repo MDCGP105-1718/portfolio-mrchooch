@@ -12,8 +12,11 @@ namespace LinkedList {
 		}
 
 		public object Pop(){
-			return RemoveAfter(Length() - 2).Content;
-
+			if (Length() > 1) {
+				return RemoveAfter(Length() - 2).Content;
+			} else {
+				return RemoveBeginning().Content;
+			}
 		}
 
 		public object Peek(int index){
